@@ -1,0 +1,59 @@
+body {
+	margin:auto;
+	width: 70%;
+	background: black;
+}
+#cover {
+	background: tan;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow: 0px 0px 25px 10px gray;
+}
+a1 {
+	font-size: 18pt;
+}
+input {
+	font-size: 20pt;
+	text-align: center;
+	border-radius: 5px;
+}
+input:focus {
+	background:black;
+	color:white;
+	box-shadow: 0px 0px 5px 5px black;
+	outline: none;
+}
+div#displayboard {
+	width: 300px;
+	border: 5px solid red;
+	border-radius: 10px;
+	text-align:left;
+	padding: 20px;
+	font-size: 14pt;
+	background: lightblue;
+}
+.CalBtn {
+	font-size: 16pt;
+	border-radius: 8px;
+	outline: none;
+	background: red;
+}
+ul#nav>li {
+	font-size: 16pt;
+	list-style-type: none;
+	padding: 5px;
+	display: inline;
+	border: 1px solid red;
+}
+span > a {
+	text-decoration: none;
+	color: green;
+}
+ul#nav > li> .home-link {
+	text-decoration:none;
+}
+ul#nav :hover {
+	text-decoration:none;
+	background: red;
+	color: white;
+}

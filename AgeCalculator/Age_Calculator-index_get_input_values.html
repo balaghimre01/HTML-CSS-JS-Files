@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+By: Bala Ghimire;
+Date: 12/20/2015
+-->
+<html>
+<head>
+	<title>Age Calculator</title>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div id="cover" >
+<center>
+<a1>Birth Year:</a1><br />
+<input id="birthyear" /> <button onClick="clearyear()" style="font-size: 20pt;">Clear</button><br />
+<a1>Birth Month:</a1><br />
+<input id="birthmonth" /> <button onClick="clearmonth()" style="font-size: 20pt;">Clear</button><br />
+<a1>Birth Date:</a1><br />
+<input id="birthdate" /> <button onClick="cleardate()" style="font-size: 20pt;">Clear</button><br />
+
+<script type="text/javascript">
+	function agecal() {
+		var today = new Date();
+		cy = today.getFullYear();
+		cm = today.getMonth()+1;
+		cd = today.getDate();
+		/*
+		-----------------For Manually Input-----------------
+		cy = prompt("Current Year: ");
+		cm = prompt("Current Year: ");
+		cd = prompt("Current Year: ");
+		----------------------------------------------------
+		*/
+	
+		by = document.getElementById('birthyear').value;
+		bm = document.getElementById('birthmonth').value;
+		bd = document.getElementById('birthdate').value;
+		
+		year = ((cy-by)*365.25)
+		month = ((cm-bm)*30.4375)
+		day = cd-bd
+		
+		days = Math.floor(year+month+day)
+		
+		years = Math.floor((year+month+day)/365.25)
+		rem_months = Math.floor(((year+month+day)%365)/30.4375)
+		rem_days = Math.floor(((year+month+day)%365)%30.4375)
+		
+		months = Math.floor(((year+month+day)/365.25)*12)
+		rem_mon_days = Math.floor(((year+month+day)%365.25)%30.4375)
+		
+		weeks = Math.floor((year+month+day)/7)
+		rem_weeks_days = Math.floor((year+month+day)%7)
+		
+		hours = Math.floor(days*24)
+		mins = hours*60
+		secs = mins*60
+		
+		document.getElementById("displayboard-days").innerHTML = "Days: " + days + "<br />";
+		
+		document.getElementById("displayboard-years").innerHTML = "Years: " + years + " Months: " + rem_months + " Days: " + rem_days + "<br />";
+		
+		document.getElementById("displayboard-months").innerHTML = "Months: " + months + " Days: " + rem_mon_days + "<br />";
+		
+		document.getElementById("displayboard-weeks").innerHTML = "Weeks: " + weeks + " Days: " + rem_weeks_days + "<br />";
+		
+		document.getElementById("displayboard-hours").innerHTML = "Hours: " + hours + "<br />";
+		
+		document.getElementById("displayboard-min").innerHTML = "Minutes: " + mins + "<br />";
+		
+		document.getElementById("displayboard-sec").innerHTML = "Seconds: " + secs + "<br />";
+	}
+		var clearY = document.getElementById("birthyear");
+		clearY.value="";
+		clearM = document.getElementById("birthmonth");
+		clearM.value="";
+		clearD = document.getElementById("birthdate");
+		clearD.value="";
+	
+	function clearall() {
+		clearY.value="";
+		clearM.value="";
+		clearD.value="";
+	}
+	function clearyear() {
+		clearY.value="";
+	}
+	function clearmonth() {
+		clearM.value="";
+	}
+	function cleardate() {
+		clearD.value="";
+	}
+</script>
+<br />
+<button class="CalBtn" onClick="agecal()">Calculate</button>
+<button onClick="clearall()" style="font-size: 16pt;">Clear all</button>
+<br />
+<h2>Results: </h2>
+<div id="displayboard" >
+<div id="displayboard-days">
+Results will be display here.......
+</div>
+<div id="displayboard-years">
+
+</div>
+<div id="displayboard-months">
+
+</div>
+<div id="displayboard-weeks">
+
+</div>
+<div id="displayboard-hours">
+
+</div>
+<div id="displayboard-min">
+
+</div>
+<div id="displayboard-sec">
+
+</div>
+</div>
+<br />
+</center>
+<ul id="nav">
+<li><a href="index.html" class="home-link"><< Home</a></li>
+<li><a href="Age_Difference.html" class="home-link" style="text-align:right;">Age Difference >></a></li>
+</ul>
+<br />
+</div>
+<footer style="color:white;">
+<br />
+<center>Copyright &copy; 2015 | All Rights Reserve</center>
+</footer>
+</body>
+</html>

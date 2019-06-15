@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Documents</title>
+	<style>
+		body {
+			background: #990000;
+			color: #FFF;
+		}
+	</style>
+</head>
+<body>
+<table>
+<tr>
+<td>Email or username</td>
+<td>Password</td>
+</tr>
+<tr>
+<td><input id="Username" type="username"/></td>
+<td><input id="Password" type="password"/></td>
+<td><button type="submit" onClick="x()">Log In</button></td>
+</tr>
+<tr>
+<td><input type="checkbox">Keep me logged in</input></td>
+<td><a href="" style="textdecoration:none;color:#FFF;">Forget your password?</a></td>
+</tr>
+</table>
+	<script type="text/javascript">
+		function x(){
+		a = document.getElementById('Username').value;
+		b = document.getElementById('Password').value;
+			
+			if ((a=="") && (b=="")) {
+				document.getElementById('show').innerHTML = "Access Granted";
+			}else {
+				document.getElementById('show').innerHTML = "Access Denied";
+			}
+		}
+	</script><br/>
+	<center>
+	<h1 style="font-size: 40pt;cursor: default;" id="show"></h1>
+	</center>
+</body>
+</html>

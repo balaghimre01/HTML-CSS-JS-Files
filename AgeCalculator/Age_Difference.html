@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+By: Bala Ghimire;
+Date: 12/20/2015
+-->
+<html>
+<head>
+	<title>Age Difference</title>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+<div id="cover" >
+<center>
+
+<div style="color:red;background:lightblue;">
+<a1>First Birth Year:</a1><br />
+<input id="First_birthyear" /><br />
+<a1>First Birth Month:</a1><br />
+<input id="First_birthmonth" /><br />
+<a1>First Birth Date:</a1><br />
+<input id="First_birthdate" /><br />
+<button style="height: 20%;font-size: 20pt;" onClick="clearFBD()">Clear</button><br />
+</div>
+<div style="color:lightBlue;background: red;">
+<a1>Second Birth Year:</a1><br />
+<input id="Second_birthyear" /><br />
+<a1>Second Birth Month:</a1><br />
+<input id="Second_birthmonth" /><br />
+<a1>Second Birth Date:</a1><br />
+<input id="Second_birthdate" /><br />
+<button style="height: 20%;font-size: 20pt;" onClick="clearSBD()">Clear</button><br />
+</div>
+<script type="text/javascript">
+	function agecal() {
+		var	Sy = document.getElementById('Second_birthyear').value;
+		Sm = document.getElementById('Second_birthmonth').value;
+		Sd = document.getElementById('Second_birthdate').value;
+		
+
+		//First Persons Birth day
+		Fy = document.getElementById('First_birthyear').value;
+		Fm = document.getElementById('First_birthmonth').value;
+		Fd = document.getElementById('First_birthdate').value;
+		
+		year = (Sy-Fy)*365.25
+		month = (Sm-Fm)*30.25
+		day = Sd-Fd
+		
+		days = Math.floor(year+month+day)
+		
+		years = Math.floor((year+month+day)/365.25)
+		rem_months = Math.floor(((year+month+day)%365.25)/30.25)
+		rem_days = Math.floor(((year+month+day)%365.25)%30.25)
+		
+		months = Math.floor(((year+month+day)/365.25)*12)
+		rem_mon_days = Math.floor(((year+month+day)%365.25)%30.25)
+		
+		weeks = Math.floor((year+month+day)/7)
+		rem_weeks_days = Math.floor((year+month+day)%7)
+		
+		hours = Math.floor(days*24)
+		mins = hours*60
+		secs = mins*60
+		
+		document.getElementById("displayboard-days").innerHTML = "Days: " + days + "<br />";
+		
+		document.getElementById("displayboard-years").innerHTML = "Years: " + years + " Months: " + rem_months + " Days: " + rem_days + "<br />";
+		
+		document.getElementById("displayboard-months").innerHTML = "Months: " + months + " Days: " + rem_mon_days + "<br />";
+		
+		document.getElementById("displayboard-weeks").innerHTML = "Weeks: " + weeks + " Days: " + rem_weeks_days + "<br />";
+		
+		document.getElementById("displayboard-hours").innerHTML = "Hours: " + hours + "<br />";
+		
+		document.getElementById("displayboard-min").innerHTML = "Minutes: " + mins + "<br />";
+		
+		document.getElementById("displayboard-sec").innerHTML = "Seconds: " + secs + "<br />";
+	}
+	var clearFY = document.getElementById("First_birthyear");
+		clearFM = document.getElementById("First_birthmonth");
+		clearFD = document.getElementById("First_birthdate");
+		clearSY = document.getElementById("Second_birthyear");
+		clearSM = document.getElementById("Second_birthmonth");
+		clearSD =document.getElementById("Second_birthdate");
+	function clearall() {
+		clearFY.value="";
+		clearFM.value="";
+		clearFD.value="";
+		clearSY.value="";
+		clearSM.value="";
+		clearSD.value="";
+	}
+	function clearFBD() {
+		clearFY.value="";
+		clearFM.value="";
+		clearFD.value="";
+	}
+	function clearSBD(){
+		clearSY.value="";
+		clearSM.value="";
+		clearSD.value="";
+	}
+</script>
+<br />
+<button class="CalBtn" onClick="agecal()">Calculate</button>
+<button onClick="clearall()">Clear all</button>
+<h2>Results: </h2>
+<div id="displayboard" >
+<div id="displayboard-days">
+Results will be display here.......
+</div>
+<div id="displayboard-years">
+
+</div>
+<div id="displayboard-months">
+
+</div>
+<div id="displayboard-weeks">
+
+</div>
+<div id="displayboard-hours">
+
+</div>
+<div id="displayboard-min">
+
+</div>
+<div id="displayboard-sec">
+
+</div>
+</div>
+<br />
+</center>
+<ul id="nav">
+<li><a href="index.html" class="home-link"><< Home</a></li>
+<li><a href="Age_Calculator-index_get_input_values.html" class="home-link" style="text-align:right;">Age Calculator >></a></li>
+</ul>
+<br />
+</div>
+<footer style="color:white;">
+<br />
+<center>Copyright &copy; 2015 | All Rights Reserve</center>
+</footer>
+</body>
+</html>
